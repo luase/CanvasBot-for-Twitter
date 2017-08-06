@@ -32,8 +32,8 @@ j = j-1
 if i >= 0 and i <= 15:
     if j >= 0 and j <= 15:
         if len(sys.argv[3]) == 6:
-            ColorList = open("colors.txt").readlines()
-            ColorListU = open("temp.txt", "w")
+            ColorList = open("canvas/colors.txt").readlines()
+            ColorListU = open("canvas/temp.txt", "w")
 
             ColorList[i*16 + j] = "FF" + sys.argv[3] + "\n"
 
@@ -42,6 +42,6 @@ if i >= 0 and i <= 15:
             
 
             ColorListU.close()
-            os.remove('colors.txt')
-            os.rename('temp.txt', 'colors.txt')
+            os.remove('canvas/colors.txt')
+            os.rename('canvas/temp.txt', 'canvas/colors.txt')
             print 'Number of colors', len(ColorList)
